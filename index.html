@@ -1,0 +1,413 @@
+---
+layout: default
+title: Home
+body_classes: page-home
+header_classes: header-transparent
+heroHeading: "Hypothesis Library"
+heroSubHeading: "Always test your team's best ideas first"
+heroBackground: ""
+heroBackgroundOverlay: false
+heroHeight: 500
+heroDiagonal: true
+heroDiagonalFill: "#f4f5fb"
+meta_title: "Hypothesis Library"
+meta_description: "Always test your team's best ideas first"
+meta_og_title: "Hypothesis Library"
+meta_og_type: website
+meta_og_url: "https://jekyll-advance-pro.netlify.com"
+meta_og_image: "https://www.zerostatic.io/theme/jekyll-advance-pro/tn.png"
+meta_og_description: "Always test your team's best ideas first"
+meta_twitter_card: summary
+meta_twitter_site: "@zerostaticio"
+meta_twitter_creator: "@zerostaticio"
+---
+
+<!-- Hero Image Partial-->
+{% include hero-image.html background=null fullscreen=page.heroFullscreen
+height=page.heroHeight heading=page.heroHeading subheading=page.heroSubHeading
+overlay=page.heroBackgroundOverlay diagonal=page.heroDiagonal
+diagonalfill=page.heroDiagonalFill %} {% assign services = site.services |
+where: "featured", true | sort:'weight' %} {% if services.size > 0 and
+site.params.homepage.show_services_section %}
+<div class="strip strip-grey pb-10 pt-6">
+  <div class="container d-none d-md-block">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <h2 class="text-center mb-3">Our Services</h2>
+      </div>
+      {% for service in services limit: 4%}
+      <div class="col-12 col-md-6 col-lg-6 mb-2">
+        <div class="service service-summary">
+          {% if service.icon %}
+          <div class="service-image">
+            <img src="{{service.icon | relative_url}}" />
+          </div>
+          {% endif %}
+          <div class="service-title">
+            <h2>
+              <a href="{{ service.url | relative_url}}">{{ service.title }}</a>
+            </h2>
+          </div>
+          <div class="service-description">
+            <p>{{ service.description }}</p>
+          </div>
+          <div class="service-content">
+            {{ service.content | truncate: 120 }}
+          </div>
+          <div class="service-link">
+            <a class="service-read-more" href="{{ service.url | relative_url}}"
+              >Read More<i class="fas fa-long-arrow-alt-right ml-1"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="col-12 text-center">
+        <a
+          class="button button-primary text-center"
+          href="{{ 'services' | relative_url }}"
+          >View All Services</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="container d-block d-md-none">
+    <div class="row justify-content-start">
+      <div class="col-12">
+        <h2 class="text-center mb-3">Our Services</h2>
+      </div>
+    </div>
+    <div class="slider">
+      {% for service in services %}
+      <div class="service service-summary">
+        {% if service.icon %}
+        <div class="service-image">
+          <img src="{{service.icon | relative_url}}" />
+        </div>
+        {% endif %}
+        <div class="service-title">
+          <h2>
+            <a href="{{ service.url | relative_url}}">{{ service.title }}</a>
+          </h2>
+        </div>
+        <div class="service-description">
+          <p>{{ service.description }}</p>
+        </div>
+        <div class="service-content">{{ service.content | truncate: 180 }}</div>
+        <div class="service-link">
+          <a class="service-read-more" href="{{ service.url | relative_url}}"
+            >Read More<i class="fas fa-long-arrow-alt-right ml-1"></i
+          ></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <a
+          class="button button-primary mt-2"
+          href="{{ 'services' | relative_url }}"
+          >View All Services</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Splash One -->
+{% if site.params.homepage.show_splash_section_one %}
+<div class="strip strip-grey pt-5 pb-5 splash splash-one">
+  <div class="container">
+    <div class="row justify-content-center">
+      {% if site.params.homepage.splash_one_image %}
+      <div class="col-12 col-md-7">
+        <img
+          class="img-fluid"
+          src="{{ site.params.homepage.splash_one_image | relative_url }}"
+        />
+      </div>
+      {% endif %}
+      <div
+        class="col-10 {% if site.params.homepage.splash_one_image %}col-md-4{% else %}col-md-10{% endif %}"
+      >
+        {% if site.params.homepage.splash_one_heading %}
+        <h2>{{ site.params.homepage.splash_one_heading }}</h2>
+        {% endif %} {% if site.params.homepage.splash_one_paragraph %}
+        <p>{{ site.params.homepage.splash_one_paragraph }}</p>
+        {% endif %} {% if site.params.homepage.splash_one_link_url %}
+        <!-- <a
+          class="button d-none d-md-inline-block"
+          href="{{ site.params.homepage.splash_one_link_url | relative_url }}"
+        >
+          {{ site.params.homepage.splash_one_link_text }}
+        </a> -->
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Splash two -->
+{% if site.params.homepage.show_splash_two_section %}
+<div
+  class="strip strip-bg-primary strip-bg-cover justify-content-center"
+  style="background-image: url('{{ site.params.services.splash_one_background_image | relative_url }}');"
+>
+  <svg aria-hidden="true" role="presentation" viewBox="0 0 100 5">
+    <polygon class="svg-grey" points="0,0 100,0 100,5" />
+  </svg>
+  <div class="container pt-10 pb-10">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        {% if site.params.homepage.splash_two_heading %}
+        <h2 class="text-white text-capitalize">
+          {{ site.params.homepage.splash_two_heading }}
+        </h2>
+        {% endif %} {% if site.params.homepage.splash_two_paragraph %}
+        <p class="text-white large">
+          {{ site.params.homepage.splash_two_paragraph }}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <svg aria-hidden="true" role="presentation" viewBox="0 0 100 10">
+    <polygon class="svg-grey" points="0,0 0,20 100,100 100,0 60,10" />
+  </svg>
+</div>
+{% endif %}
+
+<!-- Splash three -->
+{% if site.params.homepage.show_splash_section_three %}
+<div class="strip strip-grey pt-7 pb-7 splash splash-one">
+  <div class="container">
+    <div class="row justify-content-center team-summary">
+      <div
+        class="col-10 {% if site.params.homepage.splash_three_image %}col-md-10{% else %}col-md-10{% endif %}"
+      >
+        {% if site.params.homepage.splash_three_heading %}
+        <h2>{{ site.params.homepage.splash_three_heading }}</h2>
+        {% endif %} {% if site.params.homepage.splash_three_paragraph %}
+        <p class="pb-2">{{ site.params.homepage.splash_three_paragraph }}</p>
+        {% endif %} {% if site.params.homepage.splash_three_link_url %}
+        <!-- <a
+          class="button d-none d-md-inline-block"
+          href="{{ site.params.homepage.splash_three_link_url | relative_url }}"
+        >
+          {{ site.params.homepage.splash_three_link_text }} -->
+        </a>
+        {% endif %}
+      </div>
+      {% if site.params.homepage.splash_three_image %}
+      <div class="col-10">
+        <img
+          class="img-fluid"
+          src="{{ site.params.homepage.splash_three_image | relative_url }}"
+        />
+      </div>
+      {% endif %}
+      <div class="col-10">
+        <p>&nbsp;</p>
+        <p>
+          <span style="font-weight: 400;">The scoring feature in Experiment Zone comes set up with five predefined criteria your team can use:&nbsp;</span>
+        </p>
+          <ul style="list-style: unset; padding-left: 40px;">
+            <li style="font-weight: 400;">
+              <span style="font-weight: 400;">Evidence: How much evidence is there that this is solving a real user problem?</span>
+            </li>
+            <li style="font-weight: 400;">
+              <span style="font-weight: 400;">Test Effort:&nbsp; How much work will this be to test?</span>
+            </li>
+            <li style="font-weight: 400;">
+              <span style="font-weight: 400;">Implementation Effort: How much work will this be to implement?</span>
+            </li>
+            <li style="font-weight: 400;">
+              <span style="font-weight: 400;">Confidence: How confident are we that this will work?</span>
+            </li>
+            <li style="font-weight: 400;">
+              <span style="font-weight: 400;">Impact: How much of an impact will this have overall for the business?</span>
+            </li>
+          </ul>
+          <p>&nbsp;</p>
+          <p>
+            <span style="font-weight: 400;">If your organization has its own scoring rubric for ideas, you can configure Experiment Zone’s custom scoring to match it.&nbsp;</span>
+          </p>
+      </div>  
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Splash four -->
+{% if site.params.homepage.show_splash_section_four %}
+<div class="strip strip-white pt-7 pb-7 splash splash-one">
+  <div class="container">
+    <div class="row justify-content-center">
+      {% if site.params.homepage.splash_four_image %}
+      <div class="col-10 col-md-4">
+        <img
+          class="img-fluid"
+          src="{{ site.params.homepage.splash_four_image | relative_url }}"
+        />
+      </div>
+      {% endif %}
+      <div
+        class="col-10 {% if site.params.homepage.splash_four_image %}col-md-6{% else %}col-md-10{% endif %}"
+      >
+        {% if site.params.homepage.splash_four_heading %}
+        <h2>{{ site.params.homepage.splash_four_heading }}</h2>
+        {% endif %} {% if site.params.homepage.splash_four_paragraph %}
+        <p>{{ site.params.homepage.splash_four_paragraph }}</p>
+        {% endif %} {% if site.params.homepage.splash_four_link_url %}
+        <!-- <a
+          class="button d-none d-md-inline-block"
+          href="{{ site.params.homepage.splash_four_link_url | relative_url }}"
+        >
+          {{ site.params.homepage.splash_four_link_text }}
+        </a> -->
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Splash five -->
+{% if site.params.homepage.show_splash_section_five %}
+<div class="strip strip-grey pt-7 pb-7 splash splash-one">
+  <div class="container">
+    <div class="row justify-content-center">
+      {% endif %}
+      <div
+        class="col-10 {% if site.params.homepage.splash_five_image %}col-md-6{% else %}col-md-10{% endif %}"
+      >
+        {% if site.params.homepage.splash_five_heading %}
+        <h2>{{ site.params.homepage.splash_five_heading }}</h2>
+        {% endif %} {% if site.params.homepage.splash_five_paragraph %}
+        <p>{{ site.params.homepage.splash_five_paragraph }}</p>
+        {% endif %} {% if site.params.homepage.splash_five_link_url %}
+        <!-- <a
+          class="button d-none d-md-inline-block"
+          href="{{ site.params.homepage.splash_five_link_url | relative_url }}"
+        >
+          {{ site.params.homepage.splash_five_link_text }}
+        </a> -->
+        {% endif %}
+      </div>
+      {% if site.params.homepage.splash_five_image %}
+      <div class="col-10 col-md-4">
+        <img
+          class="img-fluid"
+          src="{{ site.params.homepage.splash_five_image | relative_url }}"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Partners -->
+{% if site.data.partners.size > 0 and site.params.homepage.show_partners %}
+<div class="strip strip-white home-partners">
+  <div class="container pt-5 pt-md-10 pb-10">
+    <div class="row">
+      <div class="col-12">
+        <div class="partners">
+          {% for partner in site.data.partners %} {% if partner.image %}
+          <div class="partner">
+            <img
+              alt="{{ partner.title }} logo"
+              src="{{ partner.image | relative_url }}"
+            />
+          </div>
+          {% endif %} {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Work Section -->
+{% assign works = site.work | where: "featured", true | sort:'weight' %} {% if
+works.size > 0 and site.params.homepage.show_work_section %}
+<div class="home-work strip strip-grey">
+  <div class="container pt-10 pb-10">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center mb-3">
+          {{ site.params.homepage.work_section_heading }}
+        </h2>
+      </div>
+    </div>
+    <div class="row justify-content-between">
+      {% for work in works %}
+      <div class="col-12 col-md-6 mb-2">
+        <div class="work work-summary">
+          {% if work.image %}
+          <div class="work-image">
+            <a href="{{ work.url | relative_url}}"
+              ><img src="{{ work.image | relative_url}}"
+            /></a>
+          </div>
+          {% endif %}
+          <div class="work-title">
+            <h2><a href="{{ work.url | relative_url}}">{{ work.title }}</a></h2>
+          </div>
+          <div class="work-meta">
+            {% if work.clientName %}<span>{{work.clientName}}</span> | {% endif
+            %} {% if work.clientType %}<span>{{work.clientType}}</span>{% endif
+            %}
+          </div>
+          {% if work.description %}
+          <div class="work-description">
+            <p>{{ work.description }}</p>
+          </div>
+          {% endif %}
+          <div class="work-content">{{ work.content | truncate: 120 }}</div>
+          <div class="work-link">
+            <a class="work-read-more" href="{{ work.url | relative_url }}"
+              >Read More<i class="fas fa-long-arrow-alt-right ml-1"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %} {% if site.params.homepage.show_view_all_work_button %}
+      <div class="col-12 pt-4 text-center">
+        <a class="button button-primary" href="{{ 'work' | relative_url }}"
+          >View All Work</a
+        >
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="strip strip-secondary">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1000 100"
+    preserveAspectRatio="none"
+  >
+    <path class="svg-grey" d="M738,99l262-93V0H0v5.6L738,99z"></path>
+  </svg>
+</div>
+
+<script
+  type="text/javascript"
+  src="{{ site.baseurl }}/assets/js/libs/slick.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="{{ site.baseurl }}/assets/js/pages/home.js"
+></script>
+
+{% include contact-cta.html
+  heading=site.params.contact_cta.heading
+  subheading=site.params.contact_cta.subheading
+  button_url=site.params.contact_cta.button_url
+  button_text=site.params.contact_cta.button_text
+  %}

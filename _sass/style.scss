@@ -1,0 +1,470 @@
+// Font
+@import url("https://fonts.googleapis.com/css?family=Palanquin+Dark:400,500,700|Lato:400,700,900");
+
+// Variables
+$primary: #1c3ed3;
+$secondary: #6d1cd3;
+$grey: #f4f5fb;
+$font-family-base: "Lato", Arial, sans-serif, -apple-system;
+$font-family-heading: "Palanquin Dark", Arial, sans-serif, -apple-system;
+$font-family-mono: "monospace";
+$font-size-base: 1rem;
+
+// Bootstrap
+@import "bootstrap/functions";
+@import "bootstrap-variables";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+@import "bootstrap/grid";
+// @import 'bootstrap/type';
+@import "bootstrap/tables";
+@import "bootstrap/images";
+// @import "bootstrap/code";
+@import "bootstrap/forms";
+// @import "bootstrap/buttons";
+// @import "bootstrap/transitions";
+// @import "bootstrap/dropdown";
+// @import "bootstrap/button-group";
+// @import "bootstrap/input-group";
+// @import "bootstrap/custom-forms";
+// @import "bootstrap/nav";
+// @import "bootstrap/navbar";
+// @import "bootstrap/card";
+// @import "bootstrap/breadcrumb";
+// @import "bootstrap/pagination";
+// @import "bootstrap/badge";
+// @import "bootstrap/jumbotron";
+// @import "bootstrap/alert";
+// @import "bootstrap/progress";
+// @import "bootstrap/media";
+// @import "bootstrap/list-group";
+// @import "bootstrap/close";
+// @import "bootstrap/modal";
+// @import "bootstrap/tooltip";
+// @import "bootstrap/popover";
+// @import "bootstrap/carousel";
+// @import "bootstrap/print";
+@import "bootstrap/utilities";
+
+// Font Awesome
+$fa-font-path: "../fonts/fontawesome5";
+@import "libraries/fontawesome5/fontawesome.scss";
+@import "libraries/fontawesome5/solid.scss";
+@import "libraries/fontawesome5/brands.scss";
+
+// Libraries
+@import "libraries/slick/slick";
+@import "libraries/slick/slick-custom";
+
+// Global
+@import "global/page";
+@import "global/type";
+@import "global/buttons";
+@import "global/whitebox";
+@import "global/content";
+@import "global/strip";
+@import "global/well";
+@import "global/title";
+@import "global/color";
+
+// Components
+@import "components/intro";
+@import "components/header";
+@import "components/footer";
+@import "components/footer-second";
+@import "components/footer-third";
+@import "components/main-menu-mobile";
+@import "components/social";
+@import "components/feature";
+@import "components/hero-image";
+@import "components/section-menu";
+@import "components/paginator";
+@import "components/partner";
+@import "components/sidebar";
+
+// Pages
+@import "pages/home";
+@import "pages/team/team-list";
+@import "pages/team/team-summary";
+@import "pages/team/page-team-list";
+@import "pages/services/page-services-list";
+@import "pages/services/page-services-single";
+@import "pages/services/service-summary";
+@import "pages/work/page-work-list.scss";
+@import "pages/work/work-summary";
+@import "pages/work/work-masonry";
+@import "pages/posts/page-posts-list";
+@import "pages/posts/page-posts-single";
+@import "pages/posts/post-summary";
+@import "pages/category/category-summary";
+
+body {
+  font-size: 1.1rem;
+  @include media-breakpoint-up(sm) {
+    font-size: 1rem;
+  }
+}
+// Display breakpoints for DEV
+// body:after {
+//   color: #000000;
+//   font-size: 12px;
+//   padding: 5px;
+//   font-weight: bold;
+//   right: 10px;
+//   position: fixed;
+//   text-align: center;
+//   text-transform: uppercase;
+//   bottom: 10px;
+//   width: 200px;
+//   z-index: 9999;
+//   border: solid 1px #000000;
+//   @each $name, $value in $grid-breakpoints {
+//     @include media-breakpoint-up($name) {
+//       content: '#{$name} - min-width: #{$value}';
+//     }
+//   }
+// }
+
+svg {
+  display: block;
+  polygon {
+    display: inline-block;
+  }
+}
+
+// Pricing Table
+@import url("https://fonts.googleapis.com/css?family=Lato:400100,100italic,300,300italic,400italic,700italic,700,900italic,900");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900");
+body {
+  background-color: #eee;
+}
+
+// #generic_price_table {
+//   background-color: #f0eded;
+// }
+
+/*PRICE COLOR CODE START*/
+#generic_price_table .generic_content {
+  background-color: #fff;
+}
+
+#generic_price_table .generic_content .generic_head_price {
+  background-color: #f6f6f6;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_head_content
+  .head_bg {
+  border-color: #6d1cd3 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #6d1cd3;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_head_content
+  .head
+  span {
+  color: #525252;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_price_tag
+  .price
+  .sign {
+  color: #414141;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_price_tag
+  .price
+  .currency {
+  color: #414141;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_price_tag
+  .price
+  .cent {
+  color: #414141;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_price_tag
+  .month {
+  color: #414141;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li {
+  color: #a7a7a7;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li span {
+  color: #414141;
+}
+#generic_price_table .generic_content .generic_feature_list ul li:hover {
+  background-color: #e4e4e4;
+  border-left: 5px solid #6d1cd3;
+}
+
+#generic_price_table .generic_content .generic_price_btn a {
+  border: 1px solid #6d1cd3;
+  color: #6d1cd3;
+}
+
+#generic_price_table
+  .generic_content.active
+  .generic_head_price
+  .generic_head_content
+  .head_bg,
+#generic_price_table
+  .generic_content:hover
+  .generic_head_price
+  .generic_head_content
+  .head_bg {
+  border-color: #6d1cd3 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #6d1cd3;
+  color: #fff;
+}
+
+#generic_price_table
+  .generic_content:hover
+  .generic_head_price
+  .generic_head_content
+  .head
+  span,
+#generic_price_table
+  .generic_content.active
+  .generic_head_price
+  .generic_head_content
+  .head
+  span {
+  color: #fff;
+}
+
+#generic_price_table .generic_content:hover .generic_price_btn a,
+#generic_price_table .generic_content.active .generic_price_btn a {
+  background-color: #6d1cd3;
+  color: #fff;
+}
+#generic_price_table {
+  font-family: "Raleway", sans-serif;
+}
+.row .table {
+  padding: 28px 0;
+}
+
+/*PRICE BODY CODE START*/
+
+#generic_price_table .generic_content {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+#generic_price_table .generic_content .generic_head_price {
+  margin: 0 0 20px 0;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_head_content {
+  margin: 0 0 50px 0;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_head_content
+  .head_bg {
+  border-style: solid;
+  border-width: 90px 1411px 23px 399px;
+  position: absolute;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_head_content
+  .head {
+  padding-top: 40px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_head_content
+  .head
+  span {
+  font-family: "Raleway", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag {
+  padding: 0 0 20px;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_price_tag
+  .price {
+  display: block;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_price_tag
+  .price
+  .sign {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_price_tag
+  .price
+  .currency {
+  font-family: "Lato", sans-serif;
+  font-size: 60px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  line-height: 60px;
+  padding: 0;
+  vertical-align: middle;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_price_tag
+  .price
+  .cent {
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  vertical-align: bottom;
+}
+
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_price_tag
+  .month {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  vertical-align: bottom;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  padding: 15px 0;
+  transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table .generic_content .generic_feature_list ul li:hover {
+  transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table .generic_content .generic_feature_list ul li .fa {
+  padding: 0 10px;
+}
+#generic_price_table .generic_content .generic_price_btn {
+  margin: 20px 0 32px;
+}
+
+#generic_price_table .generic_content .generic_price_btn a {
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  display: inline-block;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  outline: medium none;
+  padding: 12px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#generic_price_table .generic_content,
+#generic_price_table .generic_content:hover,
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_head_content
+  .head_bg,
+#generic_price_table
+  .generic_content:hover
+  .generic_head_price
+  .generic_head_content
+  .head_bg,
+#generic_price_table
+  .generic_content
+  .generic_head_price
+  .generic_head_content
+  .head
+  h2,
+#generic_price_table
+  .generic_content:hover
+  .generic_head_price
+  .generic_head_content
+  .head
+  h2,
+#generic_price_table .generic_content .price,
+#generic_price_table .generic_content:hover .price,
+#generic_price_table .generic_content .generic_price_btn a,
+#generic_price_table .generic_content:hover .generic_price_btn a {
+  transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+}
+@media (max-width: 320px) {
+}
+
+@media (max-width: 767px) {
+  #generic_price_table .generic_content {
+    margin-bottom: 75px;
+  }
+}

@@ -1,0 +1,116 @@
+baseurl: ""
+exclude: ["README.md"]
+permalink: pretty
+title: "Jekyll Advance Pro"
+collections_dir: collections
+markdown: kramdown
+
+sass:
+  sass_dir: _sass
+  style: compact # possible values: nested expanded compact compressed
+
+collections:
+  services:
+    output: true
+    permalink: /:collection/:path/
+  work:
+    output: true
+    permalink: /:collection/:path/
+  team:
+    output: true
+    permalink: /:collection/:path/
+  posts:
+    output: true
+    permalink: /blog/:path/
+
+defaults:
+  - scope:
+      type: services
+    values:
+      layout: service
+  - scope:
+      type: work
+    values:
+      layout: work
+  - scope:
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: "images"
+    values:
+      image: true
+  - scope:
+      path: "pages"
+    values:
+      permalink: /:basename/
+
+params:
+  google_analytics_id: ""
+  global:
+    header_fixed: true
+  footer:
+    show_menu_footer_primary: false
+    show_menu_footer_secondary: false
+    show_services_links: true
+    show_work_links: false
+  homepage:
+    show_services_section: false
+    services_count: 6
+    # Splash one
+    show_splash_section_one: true
+    # splash_one_image: assets/images/undraw_post_online_dkuk.svg
+    splash_one_heading: There's a better way to manage your ideas
+    splash_one_paragraph: Imagine this&#58 You’ve run dozens of successful experiments, and more people across the organization want to be involved.<br><br>How do you prioritize great ideas from across a whole business? It can be a seemingly impossible task to collect and prioritize a massive idea backlog and maintain executive oversight across a full-fledged experimentation program.<br><br>What if you could collaborate more effectively with an integrated hub for capturing ideas, prioritizing tests, and managing experiment outcomes?
+    splash_one_link_url: work
+    # splash_one_link_text: Our Work
+    # Splash two
+    show_splash_two_section: true
+    splash_two_background_image: assets/images/kaleidico-754543-unsplash.jpg
+    splash_two_heading: Eliminate Idea Silos
+    splash_two_paragraph: Everyone in your team can see and add ideas to Experiment Zone. This helps team members synthesize great hypotheses and develop better experiment ideas.<br><br>Test ideas often come from different places and get recorded on an ad-hoc basis in emails, Google Sheets, project management boards, whiteboards, and post-its. The problem&#58 it’s extremely easy to lose track of great ideas when they are siloed.<br><br>Experiment Zone brings a centralized idea repository where all insights, notes, comments or ideas related to any aspect of the experimentation program can be recorded. This makes it a structured process and makes it much easier to come up with data-backed hypotheses.
+    # Splash three
+    show_splash_section_three: true
+    splash_three_image: assets/images/Window-Signage-MockUp-2.jpg
+    splash_three_heading: Find the best ideas by systematically evaluating the ideas.
+    splash_three_paragraph: Scoring is a simple and consistent way to prioritize ideas in your backlog.  Most teams use scores to inform their decisions about which experiments to run next.
+    splash_three_link_url: work
+    splash_three_link_text: Our Work
+    # Splash four
+    show_splash_section_four: true
+    splash_four_image: assets/images/EZ-man-labtop.png
+    splash_four_heading: Give your collaborators the right access
+    splash_four_paragraph: Many companies want to get ideas from everywhere. Great inspiration can come from clients, users, customer service reps, user researchers, data analysts. Only a few have the expertise to evaluate the quality of the ideas for improving revenue.<br><br>With Experiment Zone’s advanced permissioning, you can get ideas from anyone – and keep the prioritization within the core team responsible for testing.
+    splash_four_link_url: work
+    splash_four_link_text: Our Work
+    # Splash five
+    show_splash_section_five: true
+    splash_five_image: assets/images/EZ-thumbs-up-girl.png
+    splash_five_heading: Take your ideas with you wherever you go
+    splash_five_paragraph: Do you capture your ideas in your AB testing tool – such as Optimizely or VWO – today? What happens if your organization can no longer use those tools because your needs change? Fear not – with Experiment Zone, your team can move between any AB testing, user insights or analytics tools without losing your great ideas.
+    splash_five_link_url: work
+    splash_five_link_text: Our Work
+    show_partners: false
+    show_work_section: false
+    work_section_heading: Our Work
+    work_count: 2
+    show_view_all_work_button: false
+  services:
+    show_features: false
+    show_splash_one_section: false
+    splash_one_background_image: assets/images/kaleidico-754543-unsplash.jpg
+    splash_one_heading: We build great software
+    splash_one_paragraph:
+      Lorem ipsum dolor sit amet, et essent mediocritatem quo, choro volumus
+      oporteat an . Numquam dolores mel eu, mea docendi omittantur et, mea ea
+      duis erat. Elit melius cu ius. Per ex novum tantas putant, ei his nullam
+      aliquam apeirian. Aeterno quaestio constituto sea an, no eum intellegat
+      assueverit.
+  contact_cta:
+    heading: Ready to get started?
+    subheading: Get your 30 day free trial
+    button_url: https://app.experimentzone.com/
+    button_text: Sign Up
+
+plugins:
+  - jekyll-environment-variables
