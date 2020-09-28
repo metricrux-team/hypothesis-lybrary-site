@@ -114,3 +114,4 @@ params:
 
 plugins:
   - jekyll-environment-variables
+  - jekyll-sitemap
