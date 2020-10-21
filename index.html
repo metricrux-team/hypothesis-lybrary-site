@@ -126,7 +126,7 @@ site.params.homepage.show_services_section %}
       </div>
       {% endif %}
       <div
-        class="col-10 {% if site.params.homepage.splash_one_image %}col-md-4{% else %}col-md-10{% endif %}"
+        class="col-12 {% if site.params.homepage.splash_one_image %}col-md-4{% else %}col-md-10{% endif %}"
       >
         {% if site.params.homepage.splash_one_heading %}
         <h2>{{ site.params.homepage.splash_one_heading }}</h2>
@@ -180,9 +180,9 @@ site.params.homepage.show_services_section %}
 {% if site.params.homepage.show_splash_section_three %}
 <div class="strip strip-grey pt-7 pb-7 splash splash-one">
   <div class="container">
-    <div class="row justify-content-center team-summary">
+    <div class="row justify-content-center">
       <div
-        class="col-10 {% if site.params.homepage.splash_three_image %}col-md-10{% else %}col-md-10{% endif %}"
+        class="col-12 {% if site.params.homepage.splash_three_image %}col-md-10{% else %}col-md-10{% endif %}"
       >
         {% if site.params.homepage.splash_three_heading %}
         <h2>{{ site.params.homepage.splash_three_heading }}</h2>
@@ -198,14 +198,14 @@ site.params.homepage.show_services_section %}
         {% endif %}
       </div>
       {% if site.params.homepage.splash_three_image %}
-      <div class="col-10">
+      <div class="col-12">
         <img
           class="img-fluid"
           src="{{ site.params.homepage.splash_three_image | relative_url }}"
         />
       </div>
       {% endif %}
-      <div class="col-10">
+      <div class="col-12">
         <p>&nbsp;</p>
         <p>
           <span style="font-weight: 400;">The scoring feature in Experiment Zone comes set up with five predefined criteria your team can use:&nbsp;</span>
@@ -251,7 +251,7 @@ site.params.homepage.show_services_section %}
       </div>
       {% endif %}
       <div
-        class="col-10 {% if site.params.homepage.splash_four_image %}col-md-6{% else %}col-md-10{% endif %}"
+        class="col-12 {% if site.params.homepage.splash_four_image %}col-md-6{% else %}col-md-10{% endif %}"
       >
         {% if site.params.homepage.splash_four_heading %}
         <h2>{{ site.params.homepage.splash_four_heading }}</h2>
@@ -278,7 +278,7 @@ site.params.homepage.show_services_section %}
     <div class="row justify-content-center">
       {% endif %}
       <div
-        class="col-10 {% if site.params.homepage.splash_five_image %}col-md-6{% else %}col-md-10{% endif %}"
+        class="col-12 {% if site.params.homepage.splash_five_image %}col-md-6{% else %}col-md-10{% endif %}"
       >
         {% if site.params.homepage.splash_five_heading %}
         <h2>{{ site.params.homepage.splash_five_heading }}</h2>

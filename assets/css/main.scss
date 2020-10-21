@@ -2,3 +2,23 @@
 ---
 
 @import "style";
+
+.service-header {
+  font-size: 3rem;
+  font-weight: 400;
+}
+@media only screen and (max-width: 463px) {
+  .service-header {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 443px) {
+  #generic_price_table
+    .generic_content
+    .generic_head_price
+    .generic_head_content
+    .head {
+    padding-top: 25px;
+  }
+}
