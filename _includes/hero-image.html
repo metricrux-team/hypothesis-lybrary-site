@@ -11,7 +11,7 @@
 			<h1>{% if include.heading %}{{ include.heading }}{% else %}{{ include.title }}{% endif %}</h1>
 			<p>{{ include.subheading }}</p>
 			{% if include.cta %}
-			<a href="{{ include.cta-href }}" class="cta button button-white mt-1">{{ include.cta }}</a>
+			<a href="{{ include.cta-href }}" id="hero-cta" class="button button-white mt-1">{{ include.cta }}</a>
 			{% endif %}
 		</div>
 		<div class="hero-down">
@@ -38,7 +38,7 @@
 			{% if include.heading %}<h1>{{ include.heading }}</h1>{% endif %}
 			<p>{{ include.subheading }}</p>
 			{% if include.cta %}
-			<a href="{{ include.cta-href }}" class="cta button button-white mt-1">{{ include.cta }}</a>
+			<a href="{{ include.cta-href }}" id="hero-cta" class="cta button button-white mt-1">{{ include.cta }}</a>
 			{% endif %}
 		</div>
 	</div>
