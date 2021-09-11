@@ -5,6 +5,8 @@ body_classes: page-home
 header_classes: header-transparent
 heroHeading: "Hypothesis Library"
 heroSubHeading: "Always test your team's best ideas first"
+cta: Start Free Trial
+cta-href: "https://app.experimentzone.com/"
 heroBackground: ""
 heroBackgroundOverlay: false
 heroHeight: 500
@@ -21,7 +23,7 @@ meta_og_description: "Always test your team's best ideas first"
 
 <!-- Hero Image Partial-->
 {% include hero-image.html background=null fullscreen=page.heroFullscreen
-height=page.heroHeight heading=page.heroHeading subheading=page.heroSubHeading
+height=page.heroHeight heading=page.heroHeading subheading=page.heroSubHeading cta=page.cta cta-href=page.cta-href
 overlay=page.heroBackgroundOverlay diagonal=page.heroDiagonal
 diagonalfill=page.heroDiagonalFill %} {% assign services = site.services |
 where: "featured", true | sort:'weight' %} {% if services.size > 0 and

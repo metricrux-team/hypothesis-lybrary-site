@@ -10,6 +10,9 @@
 			<span class="hero-section">{{ include.section }}</span>
 			<h1>{% if include.heading %}{{ include.heading }}{% else %}{{ include.title }}{% endif %}</h1>
 			<p>{{ include.subheading }}</p>
+			{% if include.cta %}
+			<a href="{{ include.cta-href }}" class="button button-white mt-1">{{ include.cta }}</a>
+			{% endif %}
 		</div>
 		<div class="hero-down">
 			<a href="#hero-anchor">
@@ -34,6 +37,9 @@
 			<span class="hero-section">{{ include.section }}</span>
 			{% if include.heading %}<h1>{{ include.heading }}</h1>{% endif %}
 			<p>{{ include.subheading }}</p>
+			{% if include.cta %}
+			<a href="{{ include.cta-href }}" class="button button-white mt-1">{{ include.cta }}</a>
+			{% endif %}
 		</div>
 	</div>
 </div>
