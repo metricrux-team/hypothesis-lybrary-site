@@ -2,9 +2,9 @@ main:
   - name: Home
     url: /
     weight: 1
-  - name: Price
-    url: /services/
-    weight: 2
+  # - name: Price
+  #   url: /services/
+  #   weight: 2
   - name: Sign In
     url: https://app.experimentzone.com/login
     weight: 2
