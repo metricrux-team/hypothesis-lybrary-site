@@ -1,8 +1,10 @@
 <div id="main-menu-mobile" class="main-menu-mobile">
   <ul>
     {% for item in site.data.menu.main %}
-    <li class="menu-item-{{ item.name }}{% if item.url == page.url %} active {% endif %}">
-      <a href="{{ item.url }}">{{ item.name }}</a>
+    <li
+      class="menu-item-{{ item.name }}{% if item.url == page.url %} active {% endif %}"
+    >
+      <a id="sign-in" href="{{ item.url }}">{{ item.name }}</a>
     </li>
     {% endfor %}
   </ul>
