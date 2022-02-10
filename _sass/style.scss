@@ -2,9 +2,10 @@
 @import url("https://fonts.googleapis.com/css?family=Palanquin+Dark:400,500,700|Lato:400,700,900");
 
 // Variables
-$primary: #1c3ed3;
-$secondary: #6d1cd3;
+$primary: #6d1cd3;
+$secondary: #00825c;
 $grey: #f4f5fb;
+$mint: #f4fff6;
 $font-family-base: "Lato", Arial, sans-serif, -apple-system;
 $font-family-heading: "Palanquin Dark", Arial, sans-serif, -apple-system;
 $font-family-mono: "monospace";
@@ -131,6 +132,73 @@ svg {
   display: block;
   polygon {
     display: inline-block;
+  }
+}
+
+.inline-link {
+  text-decoration: underline;
+  color: inherit;
+}
+.inline-link::visited {
+  color: inherit;
+}
+
+// Find your best test ideas card
+
+@include media-breakpoint-up(lg) {
+  .card {
+    margin-top: -300px;
+  }
+}
+@include media-breakpoint-up(xl) {
+  .card {
+    margin-top: -470px;
+  }
+}
+
+.card-diagonal {
+  overflow: hidden;
+}
+.card-header {
+  position: relative;
+  background-color: $primary;
+}
+
+.card-header::after {
+  position: absolute;
+  content: " ";
+  display: block;
+  left: -20px;
+  bottom: -39px;
+  width: 100%;
+  border-style: solid;
+  border-width: 0 100vw 40px 0;
+  border-color: transparent $primary transparent transparent;
+  @include media-breakpoint-up(lg) {
+    left: -40px;
+    bottom: -79px;
+    border-width: 0 100vw 80px 0;
+  }
+}
+
+.card-title {
+  color: #fff;
+}
+
+.card-title h2 {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-weight: 100;
+}
+
+.card-text p {
+  color: #000;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin: 0;
+  @include media-breakpoint-up(md) {
+    font-size: 1.6rem;
   }
 }
 

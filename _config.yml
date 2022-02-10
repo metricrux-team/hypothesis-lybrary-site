@@ -48,7 +48,7 @@ defaults:
 params:
   google_analytics_id: ""
   global:
-    header_fixed: true
+    header_fixed: false
   footer:
     show_menu_footer_primary: false
     show_menu_footer_secondary: false
@@ -108,9 +108,9 @@ params:
       assueverit.
   contact_cta:
     heading: Ready to get started?
-    subheading: Get started with our free tool
+    subheading: Create your free account with no hidden fees or strings attached
     button_url: https://app.experimentzone.com/
-    button_text: Sign Up
+    button_text: Get started - It's free
 
 plugins:
   - jekyll-environment-variables

@@ -4,9 +4,11 @@ title: Home
 body_classes: page-home
 header_classes: header-transparent
 heroHeading: "Hypothesis Library"
-heroSubHeading: "Always test your team's best ideas first"
-cta: Get Started. It's Free!
-cta-href: "https://app.experimentzone.com/"
+heroSubHeading: "Unlimited Test Ideas"
+heroSubHeadingTwo: "Unlimited Storage"
+heroSubHeadingThree: "Unlimited Teamwork"
+cta:
+cta-href:
 heroBackground: ""
 heroBackgroundOverlay: false
 heroHeight: 500
@@ -24,367 +26,320 @@ contact-button-id: sign-up-btn
 
 <!-- Hero Image Partial-->
 {% include hero-image.html background=null fullscreen=page.heroFullscreen
-height=page.heroHeight heading=page.heroHeading subheading=page.heroSubHeading cta=page.cta cta-href=page.cta-href
-overlay=page.heroBackgroundOverlay diagonal=page.heroDiagonal
-diagonalfill=page.heroDiagonalFill %} {% assign services = site.services |
-where: "featured", true | sort:'weight' %} {% if services.size > 0 and
-site.params.homepage.show_services_section %}
-<div class="strip strip-grey pb-10 pt-6">
-  <div class="container d-none d-md-block">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <h2 class="text-center mb-3">Our Services</h2>
+height=page.heroHeight heading=page.heroHeading subheading=page.heroSubHeading
+subheadingTwo=page.heroSubHeadingTwo subheadingThree=page.heroSubHeadingThree
+cta=page.cta cta-href=page.cta-href overlay=page.heroBackgroundOverlay
+diagonal=page.heroDiagonal diagonalfill=page.heroDiagonalFill %}
+
+<!-- First Paragraph -->
+<div class="strip strip-grey pt-5 pb-5">
+  <div class="container">
+    <div class="row justify-content-between flex-wrap">
+      <div class="col-12 col-lg-5 mt-0 mt-lg-4 mb-4 mb-lg-0">
+        <p class="large text-justify text-md-left">
+          Everyone in your team can see and add ideas to
+          <a href="https://experimentzone.com/" class="inline-link"
+            >Experiment Zone's</a
+          >
+          Hypothesis Library free tool. This helps your team members synthesize
+          great hypotheses and develop better experiment ideas.
+        </p>
       </div>
-      {% for service in services limit: 4%}
-      <div class="col-12 col-md-6 col-lg-6 mb-2">
-        <div class="service service-summary">
-          {% if service.icon %}
-          <div class="service-image">
-            <img src="{{service.icon | relative_url}}" />
-          </div>
-          {% endif %}
-          <div class="service-title">
-            <h2>
-              <a href="{{ service.url | relative_url}}">{{ service.title }}</a>
-            </h2>
-          </div>
-          <div class="service-description">
-            <p>{{ service.description }}</p>
-          </div>
-          <div class="service-content">
-            {{ service.content | truncate: 120 }}
-          </div>
-          <div class="service-link">
-            <a class="service-read-more" href="{{ service.url | relative_url}}"
-              >Read More<i class="fas fa-long-arrow-alt-right ml-1"></i
-            ></a>
-          </div>
+      <div class="card col-offset-lg-1 col-12 col-lg-6">
+        <div id="generic_price_table">
+          <section>
+            <div class="col-12 team-summary m-xl-3 d-block">
+              <div class="p-0 p-md-2 strip-mint">
+                <div class="card-diagonal">
+                  <div class="card-header">
+                    <div class="card-title">
+                      <h2>Find your best test ideas</h2>
+                    </div>
+                  </div>
+                  <div class="card-text text-center">
+                    <h1
+                      class="p-2 m-0"
+                      style="font-size: 60px; font-weight: 400"
+                    >
+                      Free
+                    </h1>
+                    <p class="pt-2 pb-2"><span>System to score ideas</span></p>
+                    <p class="pt-2 pb-2"><span>Set your goals</span></p>
+                    <p class="pt-2 pb-2"><span>Vote the best ideas</span></p>
+                    <p class="pt-2 pb-2">
+                      <span>Keep Track on the Dashboard</span>
+                    </p>
+                    <a
+                      href="https://app.experimentzone.com/"
+                      class="button mt-2"
+                      >Get Started - It's Free</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-      </div>
-      {% endfor %}
-      <div class="col-12 text-center">
-        <a
-          class="button button-primary text-center"
-          href="{{ 'services' | relative_url }}"
-          >View All Services</a
-        >
-      </div>
-    </div>
-  </div>
-  <div class="container d-block d-md-none">
-    <div class="row justify-content-start">
-      <div class="col-12">
-        <h2 class="text-center mb-3">Our Services</h2>
-      </div>
-    </div>
-    <div class="slider">
-      {% for service in services %}
-      <div class="service service-summary">
-        {% if service.icon %}
-        <div class="service-image">
-          <img src="{{service.icon | relative_url}}" />
-        </div>
-        {% endif %}
-        <div class="service-title">
-          <h2>
-            <a href="{{ service.url | relative_url}}">{{ service.title }}</a>
-          </h2>
-        </div>
-        <div class="service-description">
-          <p>{{ service.description }}</p>
-        </div>
-        <div class="service-content">{{ service.content | truncate: 180 }}</div>
-        <div class="service-link">
-          <a class="service-read-more" href="{{ service.url | relative_url}}"
-            >Read More<i class="fas fa-long-arrow-alt-right ml-1"></i
-          ></a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    <div class="row">
-      <div class="col-12 text-center">
-        <a
-          class="button button-primary mt-2"
-          href="{{ 'services' | relative_url }}"
-          >View All Services</a
-        >
       </div>
     </div>
   </div>
 </div>
-{% endif %}
 
-<!-- Splash One -->
-{% if site.params.homepage.show_splash_section_one %}
-<div class="strip strip-grey pt-5 pb-5 splash splash-one">
+<!-- Slash systemic evaluation -->
+<div class="strip strip-mint pt-5 pb-5">
   <div class="container">
     <div class="row justify-content-center">
-      {% if site.params.homepage.splash_one_image %}
-      <div class="col-12 col-md-7">
+      <div class="col-12 col-md-10 text-center">
+        <h2>Find the best ideas through systematic evaluation</h2>
+        <div class="row justify-content-center mt-2">
+          <div class="col-12 col-md-10">
+            <p class="large text-justify text-md-center">
+              Scoring is a simple and consistent way to prioritize ideas in your
+              backlog. Most teams use scores to inform their decisions about
+              which experiments to run next. The scoring feature in Hypothesis
+              Library comes set up with <b>five predefined* criteria</b> your
+              team can use:
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-6 col-sm-4 col-md-4 mb-2">
+            <div class="feature p-0">
+              <div class="feature-image" style="width: 80px; height: 80px">
+                <img alt="Idea Icon" src="./assets/images/idea-icon.png" />
+              </div>
+              <h2 class="feature-title mt-2">Test Effort</h2>
+              <p>How much work will this be to test?</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-4 mb-2">
+            <div class="feature p-0">
+              <div class="feature-image" style="width: 80px; height: 80px">
+                <img alt="Time Icon" src="./assets/images/time-icon.png" />
+              </div>
+              <h2 class="feature-title mt-2">Implementation Effort</h2>
+              <p>How much work will this be to implement?</p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-6 col-sm-4 col-md-4 mb-2">
+            <div class="feature p-0">
+              <div class="feature-image" style="width: 80px; height: 80px">
+                <img
+                  alt="Confidence Icon"
+                  src="./assets/images/confidence-icon.png"
+                />
+              </div>
+              <h2 class="feature-title mt-2">Confidence</h2>
+              <p>How confident are we that this will work?</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-4 mb-2">
+            <div class="feature p-0">
+              <div class="feature-image" style="width: 80px; height: 80px">
+                <img
+                  alt="Magnifier Icon"
+                  src="./assets/images/magnifier-icon.png"
+                />
+              </div>
+              <h2 class="feature-title mt-2">Evidence</h2>
+              <p>
+                How much evidence is there that this is solving a real user
+                problem?
+              </p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-md-4 mb-2">
+            <div class="feature p-0">
+              <div class="feature-image" style="width: 80px; height: 80px">
+                <img alt="Impact Icon" src="./assets/images/impact-icon.png" />
+              </div>
+              <h2 class="feature-title mt-2">Impact</h2>
+              <p>
+                How much of an impact will this have overall for the business?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 text-center">
+        <a href="https://app.experimentzone.com/" class="button mt-2"
+          >Ready to try it?</a
+        >
+        <p class="mt-5" style="font-size: small">
+          *If your organization has its own scoring rubric for ideas, you can
+          configure Experiment Zone's custom scoring to match it.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Splash Give your collaborators the right access -->
+<div class="strip strip-white pt-5 pb-5 splash splash-one">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6">
         <img
           class="img-fluid"
-          src="{{ site.params.homepage.splash_one_image | relative_url }}"
+          alt="People at work image"
+          src="./assets/images/people-at-work-small-format.png"
         />
       </div>
-      {% endif %}
-      <div
-        class="col-12 {% if site.params.homepage.splash_one_image %}col-md-4{% else %}col-md-10{% endif %}"
-      >
-        {% if site.params.homepage.splash_one_heading %}
-        <h2>{{ site.params.homepage.splash_one_heading }}</h2>
-        {% endif %} {% if site.params.homepage.splash_one_paragraph %}
-        <p>{{ site.params.homepage.splash_one_paragraph }}</p>
-        {% endif %} {% if site.params.homepage.splash_one_link_url %}
-        <!-- <a
-          class="button d-none d-md-inline-block"
-          href="{{ site.params.homepage.splash_one_link_url | relative_url }}"
-        >
-          {{ site.params.homepage.splash_one_link_text }}
-        </a> -->
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
-{% endif %}
-
-<!-- Splash two -->
-{% if site.params.homepage.show_splash_two_section %}
-<div
-  class="strip strip-bg-primary strip-bg-cover justify-content-center"
-  style="background-image: url('{{ site.params.services.splash_one_background_image | relative_url }}');"
->
-  <svg aria-hidden="true" role="presentation" viewBox="0 0 100 5">
-    <polygon class="svg-grey" points="0,0 100,0 100,5" />
-  </svg>
-  <div class="container pt-10 pb-10">
-    <div class="row">
-      <div class="col-12 col-md-6">
-        {% if site.params.homepage.splash_two_heading %}
-        <h2 class="text-white text-capitalize">
-          {{ site.params.homepage.splash_two_heading }}
-        </h2>
-        {% endif %} {% if site.params.homepage.splash_two_paragraph %}
-        <p class="text-white large">
-          {{ site.params.homepage.splash_two_paragraph }}
+      <div class="col-12 col-lg-6">
+        <h2 class="mt-5 mt-lg-0">Give your collaborators the right access</h2>
+        <p class="text-justify text-md-left">
+          Many companies want to get ideas from everywhere. Great inspiration
+          can come from clients, users, customer service reps, user researchers,
+          data analysts. Only a few have the expertise to evaluate the quality
+          of the ideas for improving revenue.
         </p>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-  <svg aria-hidden="true" role="presentation" viewBox="0 0 100 10">
-    <polygon class="svg-grey" points="0,0 0,20 100,100 100,0 60,10" />
-  </svg>
-</div>
-{% endif %}
-
-<!-- Splash three -->
-{% if site.params.homepage.show_splash_section_three %}
-<div class="strip strip-grey pt-7 pb-7 splash splash-one">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div
-        class="col-12 {% if site.params.homepage.splash_three_image %}col-md-10{% else %}col-md-10{% endif %}"
-      >
-        {% if site.params.homepage.splash_three_heading %}
-        <h2>{{ site.params.homepage.splash_three_heading }}</h2>
-        {% endif %} {% if site.params.homepage.splash_three_paragraph %}
-        <p class="pb-2">{{ site.params.homepage.splash_three_paragraph }}</p>
-        {% endif %} {% if site.params.homepage.splash_three_link_url %}
-        <!-- <a
-          class="button d-none d-md-inline-block"
-          href="{{ site.params.homepage.splash_three_link_url | relative_url }}"
+        <p class="text-justify text-md-left">
+          With Hypothesis Library's advanced permissioning, you can get ideas
+          from anyone - and keep the prioritization within the core team
+          responsible for testing.
+        </p>
+        <a
+          style="text-decoration: underline"
+          href="https://experimentzone.com/contact/"
         >
-          {{ site.params.homepage.splash_three_link_text }} -->
+          Need Help bringing your Test ideas to life? Get in touch
         </a>
-        {% endif %}
       </div>
-      {% if site.params.homepage.splash_three_image %}
-      <div class="col-12">
-        <img
-          class="img-fluid"
-          src="{{ site.params.homepage.splash_three_image | relative_url }}"
-        />
-      </div>
-      {% endif %}
-      <div class="col-12">
-        <p>&nbsp;</p>
-        <p>
-          <span style="font-weight: 400;">The scoring feature in Hypothesis Library comes set up with five predefined criteria your team can use:&nbsp;</span>
+    </div>
+  </div>
+</div>
+
+<!-- Splash Take your ideas with you wherever you go -->
+<div class="strip strip-mint pt-5 pb-5 splash splash-one">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6 mb-5">
+        <h2 class="mt-2 mt-lg-0">Take your ideas with you wherever you go</h2>
+        <p class="text-justify text-md-left">
+          Do you capture your ideas in your AB testing tool - such as Optimizely
+          or VWO - today? What happens if your organization can no longer use
+          those tools because your needs change? Fear not - with Hypothesis
+          Library, your team can move between any AB testing, user insights, or
+          analytics tools without losing your great ideas.
         </p>
-          <ul style="list-style: unset; padding-left: 40px;">
-            <li style="font-weight: 400;">
-              <span style="font-weight: 400;">Evidence: How much evidence is there that this is solving a real user problem?</span>
-            </li>
-            <li style="font-weight: 400;">
-              <span style="font-weight: 400;">Test Effort:&nbsp; How much work will this be to test?</span>
-            </li>
-            <li style="font-weight: 400;">
-              <span style="font-weight: 400;">Implementation Effort: How much work will this be to implement?</span>
-            </li>
-            <li style="font-weight: 400;">
-              <span style="font-weight: 400;">Confidence: How confident are we that this will work?</span>
-            </li>
-            <li style="font-weight: 400;">
-              <span style="font-weight: 400;">Impact: How much of an impact will this have overall for the business?</span>
-            </li>
-          </ul>
-          <p>&nbsp;</p>
-          <p>
-            <span style="font-weight: 400;">If your organization has its own scoring rubric for ideas, you can configure Hypothesis Library’s custom scoring to match it.&nbsp;</span>
-          </p>
-      </div>  
-    </div>
-  </div>
-</div>
-{% endif %}
-
-<!-- Splash four -->
-{% if site.params.homepage.show_splash_section_four %}
-<div class="strip strip-white pt-7 pb-7 splash splash-one">
-  <div class="container">
-    <div class="row justify-content-center">
-      {% if site.params.homepage.splash_four_image %}
-      <div class="col-10 col-md-4">
+        <a
+          style="text-decoration: underline"
+          href="https://experimentzone.com/contact/"
+        >
+          Need Help bringing your Test ideas to life? Get in touch
+        </a>
+      </div>
+      <div class="col-12 col-lg-6">
         <img
           class="img-fluid"
-          src="{{ site.params.homepage.splash_four_image | relative_url }}"
-        />
-      </div>
-      {% endif %}
-      <div
-        class="col-12 {% if site.params.homepage.splash_four_image %}col-md-6{% else %}col-md-10{% endif %}"
-      >
-        {% if site.params.homepage.splash_four_heading %}
-        <h2>{{ site.params.homepage.splash_four_heading }}</h2>
-        {% endif %} {% if site.params.homepage.splash_four_paragraph %}
-        <p>{{ site.params.homepage.splash_four_paragraph }}</p>
-        {% endif %} {% if site.params.homepage.splash_four_link_url %}
-        <!-- <a
-          class="button d-none d-md-inline-block"
-          href="{{ site.params.homepage.splash_four_link_url | relative_url }}"
-        >
-          {{ site.params.homepage.splash_four_link_text }}
-        </a> -->
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
-{% endif %}
-
-<!-- Splash five -->
-{% if site.params.homepage.show_splash_section_five %}
-<div class="strip strip-grey pt-7 pb-7 splash splash-one">
-  <div class="container">
-    <div class="row justify-content-center">
-      {% endif %}
-      <div
-        class="col-12 {% if site.params.homepage.splash_five_image %}col-md-6{% else %}col-md-10{% endif %}"
-      >
-        {% if site.params.homepage.splash_five_heading %}
-        <h2>{{ site.params.homepage.splash_five_heading }}</h2>
-        {% endif %} {% if site.params.homepage.splash_five_paragraph %}
-        <p>{{ site.params.homepage.splash_five_paragraph }}</p>
-        {% endif %} {% if site.params.homepage.splash_five_link_url %}
-        <!-- <a
-          class="button d-none d-md-inline-block"
-          href="{{ site.params.homepage.splash_five_link_url | relative_url }}"
-        >
-          {{ site.params.homepage.splash_five_link_text }}
-        </a> -->
-        {% endif %}
-      </div>
-      {% if site.params.homepage.splash_five_image %}
-      <div class="col-10 col-md-4">
-        <img
-          class="img-fluid"
-          src="{{ site.params.homepage.splash_five_image | relative_url }}"
+          alt="Girl reading post it not image"
+          src="./assets/images/girl-reading-post-it-notes-small-format 2.png"
         />
       </div>
     </div>
   </div>
 </div>
-{% endif %}
 
-<!-- Partners -->
-{% if site.data.partners.size > 0 and site.params.homepage.show_partners %}
-<div class="strip strip-white home-partners">
-  <div class="container pt-5 pt-md-10 pb-10">
-    <div class="row">
-      <div class="col-12">
-        <div class="partners">
-          {% for partner in site.data.partners %} {% if partner.image %}
-          <div class="partner">
-            <img
-              alt="{{ partner.title }} logo"
-              src="{{ partner.image | relative_url }}"
-            />
+<!-- Splash Experiment Zone -->
+<div class="strip strip-grey pt-5 pb-3 splash splash-one">
+  <div class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-12 col-lg-5 text-left text-sm-center text-lg-left">
+          <img
+            class="img-fluid ml-lg-n2"
+            alt="Experiment Zone Logo"
+            src="./assets/images/EZ-logo-footer.png"
+            style="width: 100%;"
+          />
+        <h2 class="mb-1 mb-lg-2">Explore What We Do Better</h2>
+        <p class="mb-1 text-justify text-md-left">
+          Would you like to get more visitors to become customers?
+        </p>
+        <p class="mb-1 mb-lg-2 text-justify text-md-left">
+          We're here to help you increase conversion rates.
+        </p>
+        <div class="col-12 text-center text-lg-left mb-4 mb-lg-0">
+          <a
+          class="button mt-1"
+          href="https://experimentzone.com/"
+          >
+          Learn more
+          </a>
+        </div>
+    </div>
+      <div class="col-lg-7 mb-2">
+        <div class="container work-summary pt-2 pr-2 pl-2">
+          <div class="row">
+            <div class="col-12 col-lg-6 mb-2">
+              <div class="work work-summary" style="align-items: center;">
+                <div class="work-image text-center">
+                  <a href="https://experimentzone.com/"
+                  ><img alt="Conversion Rate Optimization (CRO) Strategies" src="./assets/images/services/icons8-treasure-map-96.png"
+                  /></a>
+                </div>
+                <div>
+                  <h3><a href="https://experimentzone.com/" class="color-secondary">Digital Strategy</a></h3>
+                </div>
+                <div class="work-description text-center pr-2 pl-2">
+                  <p>Unlock additional value from your website.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-2">
+              <div class="work work-summary" style="align-items: center;">
+                <div class="work-image text-center">
+                  <a href="https://experimentzone.com/"
+                  ><img alt="Conversion Rate Optimization (CRO) Strategies" src="./assets/images/services/icons8-pass-fail-96.png"
+                  /></a>
+                </div>
+                <div>
+                  <h3><a href="https://experimentzone.com/" class="color-secondary">A/B Testing</a></h3>
+                </div>
+                <div class="work-description text-center pr-2 pl-2">
+                  <p>Make data driven decisions with confidence.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-2">
+              <div class="work work-summary" style="align-items: center;">
+                <div class="work-image text-center">
+                  <a href="https://experimentzone.com/"
+                  ><img alt="Conversion Rate Optimization (CRO) Strategies" src="./assets/images/services/icons8-graph-report-96.png"
+                  /></a>
+                </div>
+                <div>
+                  <h3><a href="https://experimentzone.com/" class="color-secondary">User Research</a></h3>
+                </div>
+                <div class="work-description text-center pr-2 pl-2">
+                  <p>Understand your customers and their pain points.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-2">
+              <div class="work work-summary" style="align-items: center;">
+                <div class="work-image text-center">
+                  <a href="https://experimentzone.com/"
+                  ><img alt="Conversion Rate Optimization (CRO) Strategies" src="./assets/images/services/icons8-google_analytics_logo.png"
+                  /></a>
+                </div>
+                <div>
+                  <h3><a href="https://experimentzone.com/" class="color-secondary">Analytics</a></h3>
+                </div>
+                <div class="work-description text-center pr-2 pl-2">
+                  <p>Track visitors behavior and uncover opportunities.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          {% endif %} {% endfor %}
         </div>
       </div>
     </div>
   </div>
-</div>
-{% endif %}
-
-<!-- Work Section -->
-{% assign works = site.work | where: "featured", true | sort:'weight' %} {% if
-works.size > 0 and site.params.homepage.show_work_section %}
-<div class="home-work strip strip-grey">
-  <div class="container pt-10 pb-10">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="text-center mb-3">
-          {{ site.params.homepage.work_section_heading }}
-        </h2>
-      </div>
-    </div>
-    <div class="row justify-content-between">
-      {% for work in works %}
-      <div class="col-12 col-md-6 mb-2">
-        <div class="work work-summary">
-          {% if work.image %}
-          <div class="work-image">
-            <a href="{{ work.url | relative_url}}"
-              ><img src="{{ work.image | relative_url}}"
-            /></a>
-          </div>
-          {% endif %}
-          <div class="work-title">
-            <h2><a href="{{ work.url | relative_url}}">{{ work.title }}</a></h2>
-          </div>
-          <div class="work-meta">
-            {% if work.clientName %}<span>{{work.clientName}}</span> | {% endif
-            %} {% if work.clientType %}<span>{{work.clientType}}</span>{% endif
-            %}
-          </div>
-          {% if work.description %}
-          <div class="work-description">
-            <p>{{ work.description }}</p>
-          </div>
-          {% endif %}
-          <div class="work-content">{{ work.content | truncate: 120 }}</div>
-          <div class="work-link">
-            <a class="work-read-more" href="{{ work.url | relative_url }}"
-              >Read More<i class="fas fa-long-arrow-alt-right ml-1"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-      {% endfor %} {% if site.params.homepage.show_view_all_work_button %}
-      <div class="col-12 pt-4 text-center">
-        <a class="button button-primary" href="{{ 'work' | relative_url }}"
-          >View All Work</a
-        >
-      </div>
-      {% endif %}
-    </div>
   </div>
 </div>
-{% endif %}
+
 
 <div class="strip strip-secondary">
   <svg
@@ -405,10 +360,7 @@ works.size > 0 and site.params.homepage.show_work_section %}
   src="{{ site.baseurl }}/assets/js/pages/home.js"
 ></script>
 
-{% include contact-cta.html
-  heading=site.params.contact_cta.heading
-  subheading=site.params.contact_cta.subheading
-  button_url=site.params.contact_cta.button_url
-  button_text=site.params.contact_cta.button_text
-  id=page.contact-button-id
-  %}
+{% include contact-cta.html heading=site.params.contact_cta.heading
+subheading=site.params.contact_cta.subheading
+button_url=site.params.contact_cta.button_url
+button_text=site.params.contact_cta.button_text id=page.contact-button-id %}
